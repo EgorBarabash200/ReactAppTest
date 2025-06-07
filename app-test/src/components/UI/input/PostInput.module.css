@@ -1,0 +1,9 @@
+.myInput{
+     width: 290px;
+}
+
+.myInput::-webkit-inner-spin-button,
+.myInput::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
