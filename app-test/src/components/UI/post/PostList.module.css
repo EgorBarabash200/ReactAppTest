@@ -1,0 +1,10 @@
+
+.listContainer{
+    width: 100%;
+    height: 300px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    overflow: auto;
+    gap: 10px;
+}
