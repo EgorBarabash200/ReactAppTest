@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import classes from './CreatePost.module.css'
+import cl from './CreatePost.module.css'
 import PostInput from '../input/PostInput'
 import SelectPost from '../select/SelectPost'
 import PostButton from '../button/PostButton'
@@ -15,7 +15,7 @@ const CreatePost = ({ create }) => {
   }
   console.log(setPost);
   return (
-    <div className={classes.createContainer}>
+    <div className={cl.createContainer}>
       <PostInput
         value={post.name}
         onChange={e => setPost({ ...post, name: e.target.value })}
@@ -29,7 +29,7 @@ const CreatePost = ({ create }) => {
         placeholder="Телефон"
       />
       <SelectPost
-        value={post.jobPosition?.value || ""} 
+        value={post.jobPosition?.value || ""}
         onChange={selectedOption => setPost({ ...post, jobPosition: selectedOption })}
         defaultValue='Должность'
         options={[

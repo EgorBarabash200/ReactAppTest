@@ -22,14 +22,14 @@
    margin-left: 40px;
 }
 .redactDiv{
-    background-image: url(/static/picture/icons8-редактировать.svg);
+    background-image: url(/public/static/icons/icons8-редактировать.svg);
     background-repeat: no-repeat;
     background-size: cover;
     width: 30px;
     height: 30px;
 }
 .deletDiv{
-    background-image: url(/static/picture/icons8-удалить.svg);
+    background-image: url(/public/static/icons/icons8-удалить.svg);
     background-repeat: no-repeat;
     background-size: cover;
     width: 30px;
