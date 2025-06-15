@@ -1,8 +1,11 @@
 import React from 'react'
 import cl from './PostItem.module.css'
+
 const PostItem = ({ posts }) => {
     const getBackgroundColor = () => {
         const jobValue = posts.jobPosition.value;
+        // На switch case вместо if else
+        console.log(jobValue)
         if (jobValue === 'employee') {
             return '#09cd4e';
         } else if (jobValue === 'develop') {

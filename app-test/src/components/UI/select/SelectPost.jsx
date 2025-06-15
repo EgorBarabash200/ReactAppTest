@@ -1,5 +1,7 @@
 import React from 'react'
 import cl from './SelectPost.module.css'
+
+// Переименовать с SelectPost на Select
 const SelectPost = ({ options, defaultValue, value, onChange }) => {
   console.log(value);
   const handleChange = (e) => {

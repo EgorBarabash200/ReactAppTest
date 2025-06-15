@@ -3,10 +3,19 @@ import cl from './CreatePost.module.css'
 import PostInput from '../input/PostInput'
 import SelectPost from '../select/SelectPost'
 import PostButton from '../button/PostButton'
+
+
+// Переименовать компонент на FormCard
 const CreatePost = ({ create }) => {
+  // Убрать массив лищний из useState
+  // Переименовываем на formCard и setFormCard
   const [post, setPost] = useState([{ name: '', phone: '', jobPost: null }]);
+
+  // addNewCard
+  // убераем e и убираем preventDefaul
   const addNewPost = (e) => {
     e.preventDefault()
+    // переименовываем с newPost на newCard
     const newPost = {
       ...post, id: Date.now()
     }
