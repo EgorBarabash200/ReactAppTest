@@ -1,8 +1,7 @@
 import React from 'react'
-import cl from './SelectPost.module.css'
+import cl from './Select.module.css'
 
-// Переименовать с SelectPost на Select
-const SelectPost = ({ options, defaultValue, value, onChange }) => {
+const Select = ({ options, defaultValue, value, onChange }) => {
   console.log(value);
   const handleChange = (e) => {
     const selectedValue = e.target.value
@@ -25,4 +24,4 @@ const SelectPost = ({ options, defaultValue, value, onChange }) => {
   )
 }
 
-export default SelectPost
+export default Select
