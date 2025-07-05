@@ -7,13 +7,10 @@ const Card = ({ cards }) => {
         switch (jobValue) {
             case 'employee':
                 return '#09cd4e';
-                break;
             case 'develop':
                 return '#eddd09';
-                break;
             case 'admin':
                 return '#b41b04';
-                break;
         }
     }
     return (

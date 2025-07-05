@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import cl from './FromCard.module.css'
 import Input from '../ui/input/Input'
 import Select from '../ui/select/Select'
-import Button from '../ui/button/Button'
+import CardButton from '../ui/button/CardButton'
 
 const FromCard = ({ create }) => {
   const [formCard, setFormCard] = useState({ name: '', phone: '', jobPost: null });
@@ -37,7 +37,7 @@ const FromCard = ({ create }) => {
           { value: 'admin', job: 'Администратор' },
         ]}
       />
-      <Button onClick={addNewCard}>Добавить</Button>
+      <CardButton onClick={addNewCard}>Добавить</CardButton>
     </div>
   )
 }
