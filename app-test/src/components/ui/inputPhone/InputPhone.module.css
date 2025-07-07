@@ -1,0 +1,10 @@
+.myInpPhone {
+     width: 290px;
+    height: 19.3px;
+}
+
+.myInpPhone::-webkit-inner-spin-button,
+.myInpPhone::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}

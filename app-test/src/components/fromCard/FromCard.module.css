@@ -1,6 +1,6 @@
 .createContainer {
-    width: 300px;
-    height: 120px;
+    width: 320px;
+    height: 140px;
     padding: 20px;
     display: flex;
     flex-direction: column;

@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
 import cl from './FromCard.module.css'
-import Input from '../ui/input/Input'
-import Select from '../ui/select/Select'
 import CardButton from '../ui/button/CardButton'
+import InputPhone from '../ui/inputPhone/InputPhone'
+import InputName from '../ui/inputName/InputName'
+import SelectCard from '../ui/select/SelectCard'
 
 const FromCard = ({ create }) => {
-  const [formCard, setFormCard] = useState({ name: '', phone: '', jobPost: null });
+  const [formCard, setFormCard] = useState({ name: '', phone: '+7', jobPost: null });
   const addNewCard = () => {
     const newCard = {
       ...formCard, id: Date.now()
@@ -15,19 +16,19 @@ const FromCard = ({ create }) => {
   }
   return (
     <div className={cl.createContainer}>
-      <Input
+      <InputName
         value={formCard.name}
         onChange={e => setFormCard({ ...formCard, name: e.target.value })}
         type="text"
         placeholder="Имя"
       />
-      <Input
+      <InputPhone
         value={formCard.phone}
         onChange={e => setFormCard({ ...formCard, phone: e.target.value })}
         type="number"
         placeholder="Телефон"
       />
-      <Select
+      <SelectCard
         value={formCard.jobPosition?.value || ""}
         onChange={selectedOption => setFormCard({ ...formCard, jobPosition: selectedOption })}
         defaultValue='Должность'

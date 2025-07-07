@@ -1,9 +1,9 @@
 import React from "react";
-import cl from "./Input.module.css";
-
-const Input = ({value, type, placeholder, onChange}) => {
+import cl from "./InputName.module.css";
+import { Input } from 'antd';
+const InputName = ({value, type, placeholder, onChange}) => {
   return (
-    <input
+    <Input
       className={cl.myInput}
       value={value}
       type={type}
@@ -13,4 +13,4 @@ const Input = ({value, type, placeholder, onChange}) => {
   );
 };
 
-export default Input;
+export default InputName;
