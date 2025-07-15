@@ -1,13 +1,14 @@
 import React from 'react'
 import { Input, Space } from 'antd';
 import cl from './InputPhone.module.css'
-const InputPhone = ({ value, type, placeholder, onChange }) => {
+const InputPhone = ({ value, valueCode, type, placeholder, onChange, onChangeCode }) => {
     return (
         <Space.Compact>
             <Input
                 style={{ width: '20%' }}
                 className={cl.myInpPhone}
-                defaultValue="+7" />
+                value={valueCode}
+                onChange={onChangeCode} />
             <Input
                 style={{ width: '80%' }}
                 className={cl.myInpPhone}

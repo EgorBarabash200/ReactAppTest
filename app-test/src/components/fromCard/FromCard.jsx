@@ -6,13 +6,13 @@ import InputName from '../ui/inputName/InputName'
 import SelectCard from '../ui/select/SelectCard'
 
 const FromCard = ({ create }) => {
-  const [formCard, setFormCard] = useState({ name: '', phone: '+7', jobPost: null });
+  const [formCard, setFormCard] = useState({ name: '', phone: '', phoneCode: '+7', jobPost: null });
   const addNewCard = () => {
     const newCard = {
       ...formCard, id: Date.now()
     }
     create(newCard);
-    setFormCard({ name: '', phone: '', jobPost: null });
+    setFormCard({ name: '', phone: '', phoneCode: '+7', jobPost: null });
   }
   return (
     <div className={cl.createContainer}>
@@ -24,7 +24,9 @@ const FromCard = ({ create }) => {
       />
       <InputPhone
         value={formCard.phone}
+        valueCode={formCard.phoneCode}
         onChange={e => setFormCard({ ...formCard, phone: e.target.value })}
+        onChangeCode={e => setFormCard({ ...formCard, phoneCode: e.target.value })}
         type="number"
         placeholder="Телефон"
       />
