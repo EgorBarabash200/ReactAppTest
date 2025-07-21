@@ -3,7 +3,7 @@ import cl from './Card.module.css'
 
 const Card = ({ cards }) => {
     const getBackgroundColor = () => {
-        const jobValue = cards.jobPosition.value;
+        const jobValue = cards.jobPostion.value;
         switch (jobValue) {
             case 'employee':
                 return '#09cd4e';
@@ -18,7 +18,7 @@ const Card = ({ cards }) => {
             <div className={cl.textDiv}>
                 <p>Имя {cards.name}</p>
                 <p>Телефон {cards.phoneCode} {cards.phone}</p>
-                <p>Должность {cards.jobPosition.job} </p>
+                <p>Должность {cards.jobPostion} </p>
             </div>
             <div className={cl.imgDiv}>
                 <div className={cl.redactDiv}></div>
