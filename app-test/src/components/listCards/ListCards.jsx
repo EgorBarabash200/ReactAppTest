@@ -2,11 +2,11 @@ import React from 'react'
 import Card from '../card/Card'
 import cl from './ListCards.module.css'
 
-const ListCards = ({ cards }) => {
+const ListCards = ({ cards, onDeleteCard, onPutCard }) => {
   return (
     <div className={cl.listContainer}>
       {cards.map((item, index) =>
-        <Card cards={item} key={`${index}-card`} />
+        <Card card={item} key={`${index}-card`} onDelete={onDeleteCard} onEdit={onPutCard} />
       )}
     </div>
   )

@@ -5,15 +5,17 @@ import InputPhone from '../ui/inputPhone/InputPhone'
 import InputName from '../ui/inputName/InputName'
 import SelectCard from '../ui/select/SelectCard'
 import { postCreateCards } from "../../API/CardServis";
-const FromCard = ({ create }) => {
-  const [formCard, setFormCard] = useState({ name: '', phone: '', phoneCode: '+7', jobPostion: null });
-  const addNewCard = () => {
+const FromCard = ({ setList }) => {
+  const [formCard, setFormCard] = useState({ name: '', phone: '', phoneCode: '+7', jobPosition: null });
+  const addNewCard = async () => {
     const newCard = {
-      ...formCard, id: Date.now()
+      name: formCard.name,
+      phone: formCard.phone,
+      jobPosition: formCard.jobPosition.value,
     }
-   // postCreateCards(newCard);
-    create(newCard);
-    setFormCard({ name: '', phone: '', phoneCode: '+7', jobPostion: null });
+    const data = await postCreateCards(newCard);
+    setList(data);
+    setFormCard({ name: '', phone: '', phoneCode: '+7', jobPosition: null });
   }
 
   return (
@@ -33,8 +35,8 @@ const FromCard = ({ create }) => {
         placeholder="Телефон"
       />
       <SelectCard
-        value={formCard.jobPostion?.value || ""}
-        onChange={selectedOption => setFormCard({ ...formCard, jobPostion: selectedOption })}
+        value={formCard.jobPosition?.value || ""}
+        onChange={selectedOption => setFormCard({ ...formCard, jobPosition: selectedOption })}
         defaultValue='Должность'
         options={[
           { value: 'employee', job: 'Сотрудник' },
