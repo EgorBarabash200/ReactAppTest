@@ -1,11 +1,12 @@
-import React from 'react'
+import React,{ useState } from 'react'
 import cl from './Card.module.css'
+import EditedCard from '../editedCard/EditedCard'
 const Card = ({ card, onDelete, onEdit }) => {
     const [isOpen, setOpen] = useState(false);
     const [editedCard, setEditedCard] = useState({ ...card });
 
     const getBackgroundColor = () => {
-        const jobValue = card.jobPosition;
+        const jobValue = isOpen ? editedCard.jobPosition : card.jobPosition;
         switch (jobValue) {
             case 'employee':
                 return '#09cd4e';
@@ -16,7 +17,7 @@ const Card = ({ card, onDelete, onEdit }) => {
         };
     }
     const jobSelectName = () => {
-        const jobName = card.jobPosition;
+        const jobName = isOpen ? editedCard.jobPosition : card.jobPosition;
         switch (jobName) {
             case 'employee':
                 return 'Сотрудник';
@@ -26,20 +27,57 @@ const Card = ({ card, onDelete, onEdit }) => {
                 return 'Администратор'
         }
     }
-
+    const appendChange = async () => {
+        const { name, phone, jobPosition } = card;
+        const data = {
+            name: editedCard.name,
+            phone: editedCard.phone,
+            jobPosition: editedCard.jobPosition
+        }
+        onEdit(card.id, data);
+        setOpen(false)
+    }
+     const handleCancel = () => {
+        setEditedCard({ ...card });
+        setOpen(false);
+    }
     return (
         <div style={{ backgroundColor: getBackgroundColor() }} className={cl.mainDiv}>
             <div className={cl.textDiv}>
-                <p>Имя {card.name}</p>
-                <p>Телефон {card.phoneCode} {card.phone}</p>
-                <p>Должность {jobSelectName()} </p>
+                {isOpen ? (
+                    <EditedCard 
+                        editedCard={editedCard}
+                        setEditedCard={setEditedCard}
+                        onSave={appendChange}
+                        onCancel={handleCancel}
+                    />
+                ) : (
+                    <>
+                        <p>Имя: {card.name}</p>
+                        <p>Телефон: {card.phoneCode} {card.phone}</p>
+                        <p>Должность: {jobSelectName()}</p>
+                    </>
+                )}
             </div>
+            
             <div className={cl.imgDiv}>
-                <div className={cl.redactDiv}></div>
-                <div className={cl.deletDiv} onClick={() => onDelete(card.id)} ></div>
+                {!isOpen && (
+                    <>
+                        <div
+                            className={cl.redactDiv}
+                            onClick={() => setOpen(true)}
+                            title="Редактировать"
+                        ></div>
+                        <div
+                            className={cl.deletDiv}
+                            onClick={() => onDelete(card.id)}
+                            title="Удалить"
+                        ></div>
+                    </>
+                )}
             </div>
         </div>
-    )
-}
+    );
+};
 
 export default Card
