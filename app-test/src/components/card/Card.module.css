@@ -22,18 +22,14 @@
    margin-left: 40px;
 }
 .redactDiv{
-    background-image: url(/public/static/icons/icons8-редактировать.svg);
-    background-repeat: no-repeat;
-    background-size: cover;
     width: 30px;
     height: 30px;
+    color: rgb(11, 124, 124);
 }
 .deletDiv{
-    background-image: url(/public/static/icons/icons8-удалить.svg);
-    background-repeat: no-repeat;
-    background-size: cover;
     width: 30px;
     height: 30px;
+    color: rgb(83, 1, 159);
 }
 .redactDiv:hover,
 .deletDiv:hover{

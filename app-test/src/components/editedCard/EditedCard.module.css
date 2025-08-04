@@ -4,3 +4,13 @@
     justify-content: space-evenly;
     margin-left: 43px;
 }
+
+.saveButton{
+    background-color: #fff;
+    color: green;
+}
+
+.cancleButton{
+    background-color: #fff;
+    color: red;
+}

@@ -1,6 +1,7 @@
 import React,{ useState } from 'react'
 import cl from './Card.module.css'
 import EditedCard from '../editedCard/EditedCard'
+import CardButton from '../ui/button/CardButton';
 const Card = ({ card, onDelete, onEdit }) => {
     const [isOpen, setOpen] = useState(false);
     const [editedCard, setEditedCard] = useState({ ...card });
@@ -63,16 +64,14 @@ const Card = ({ card, onDelete, onEdit }) => {
             <div className={cl.imgDiv}>
                 {!isOpen && (
                     <>
-                        <div
+                        <CardButton
                             className={cl.redactDiv}
                             onClick={() => setOpen(true)}
-                            title="Редактировать"
-                        ></div>
-                        <div
+                        >✎</CardButton>
+                        <CardButton
                             className={cl.deletDiv}
                             onClick={() => onDelete(card.id)}
-                            title="Удалить"
-                        ></div>
+                        >🗑</CardButton>
                     </>
                 )}
             </div>

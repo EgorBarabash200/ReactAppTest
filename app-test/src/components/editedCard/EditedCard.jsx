@@ -2,7 +2,7 @@ import React from 'react'
 import InputName from '../ui/inputName/InputName';
 import SelectCard from '../ui/select/SelectCard';
 import CardButton from '../ui/button/CardButton';
-import cl from'./EditedCard.module.css'
+import cl from './EditedCard.module.css'
 const EditedCard = ({
   editedCard,
   setEditedCard,
@@ -45,11 +45,13 @@ const EditedCard = ({
 
       <div className={cl.buttonGroup}>
         <CardButton
+          className={cl.saveButton}
           style={{ width: '20%' }}
           onClick={onSave}
           title="Сохранить"
         >✓</CardButton>
         <CardButton
+          className={cl.cancleButton}
           style={{ width: '20%' }}
           onClick={onCancel}
           title="Отменить"
